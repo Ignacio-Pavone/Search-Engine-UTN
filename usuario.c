@@ -193,7 +193,7 @@ int terminoEncontrado(nodoA *motor, char palabra[20], int id, int pos)
         if (strcmpi(palabra, motor->palabra) == 0 && (motor->ocurrencias->idDOC == id))
         {
 
-            flag = buscarPosicionesTermino(motor->ocurrencias, motor->ocurrencias->pos, id, motor->palabra);
+            flag = buscarPosicionesTermino(motor->ocurrencias,pos, id, motor->palabra);
             // si la pos, y el id son iguales esta funcion retorna 1
         }
         else
