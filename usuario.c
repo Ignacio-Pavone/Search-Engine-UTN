@@ -193,7 +193,7 @@ int terminoEncontrado(nodoA *motor, char palabra[20], int id, int pos)
         if (strcmpi(palabra, motor->palabra) == 0 && (motor->ocurrencias->idDOC == id))
         {
 
-            flag = buscarPosicionesTermino(motor->ocurrencias,pos, id, motor->palabra);
+            flag = buscarPosicionesTermino(motor->ocurrencias, pos, motor->ocurrencias->idDOC, motor->palabra);
             // si la pos, y el id son iguales esta funcion retorna 1
         }
         else
@@ -278,14 +278,14 @@ void buscarFrase(nodoA *motor, char frase[500])
         printf("\n-> Ingrese mas de una palabra para poder buscar una frase\n\n");
     }
     else
-    {       
-        for (int k = 0; k < cantidadDocumentos(); k++) //Recorriendo todos los documentos
-        {         
+    {
+        for (int k = 0; k < cantidadDocumentos()+1; k++) //Recorriendo todos los documentos
+        {
             arrayValidospos = cargarArraydePOS(motor, array[0], k, pos); // paso la primera palabra de la frase [0], cargo las pos y retrono cantidad de posiciones
-            for (int i = 0; i < arrayValidospos; i++) // recorro cada una de las pos para ver si las posiciones son contiguas
+            for (int i = 0; i < arrayValidospos; i++)                    // recorro cada una de las pos para ver si las posiciones son contiguas
             {
                 int encontrado = 1;
-                int j = 1;                                                                                            //2         3
+                int j = 1;            //2         3
                 int aux = pos[i] + 1; // guarda la posicion de la primera palabra +1, para comparar con la siguiente HOLA (2), COMO (2+1)
                 while (j < validosFrase && encontrado == 1)
                 {
@@ -456,7 +456,7 @@ int cantidadDocumentos() // cant de documentos validos
     FILE *buffer = fopen(DICCIONARIO, "rb");
     termino aux;
     int maximo = 0;
-    int i = 1;
+    int i = 0;
 
     while (fread(&aux, sizeof(termino), 1, buffer) > 0)
     {
@@ -465,7 +465,7 @@ int cantidadDocumentos() // cant de documentos validos
             maximo = aux.idDOC;
         }
     }
-    return maximo+i;
+    return maximo;
 }
 
 int buscarFrecuenciasTodos(nodoT *ocurrencias)

@@ -195,7 +195,7 @@ int MenuOpciones()
     printf("14-> Ingrese 0 para salir\n\n");
     printf("\n                                [INFORMACION MOTOR]                            \n\n");
     printf("->Cantidad de palabras en el motor   < %i >\n", cantidadPalabrasTotal());
-    printf("->Cantidad de documentos en el motor < %i >\n\n", cantidadDocumentos() - 1);
+    printf("->Cantidad de documentos en el motor < %i >\n\n", cantidadDocumentos());
     printf("*Ingrese una opcion numerica -> ");
     scanf("%d", &opcion);
     return opcion;
