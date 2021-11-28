@@ -37,8 +37,8 @@ int main()
             system("cls");
             // Buscar todas las apariciones de un término en algún documento (operacion or)
             printf("->Que palabra desea buscar ?\n");
-            fflush(stdin);
             printf("\n*Ingrese palabra -> ");
+            fflush(stdin);
             scanf("%s", &palabra);
             buscarPalabra(motor, palabra);
             system("pause");
@@ -48,8 +48,8 @@ int main()
             system("cls");
             // Buscar todas las apariciones de un término en un documento y otro (operacion and)
             printf("->Que palabra desea buscar en varios documentos ?\n");
-            fflush(stdin);
             printf("\n*Ingrese palabra -> ");
+            fflush(stdin);
             scanf("%s", &palabra);
             printf("\n->Ingrese ID doc a buscar: ");
             scanf("%i", &id1);
@@ -63,11 +63,11 @@ int main()
             // Buscar la aparición de más de un término en el mismo documento
             system("cls");
             printf("->Palabras a buscar en un mismo documento\n\n");
-            fflush(stdin);
             printf("->Ingrese primera palabra a buscar -> ");
-            scanf("%s", &palabra1);
             fflush(stdin);
+            scanf("%s", &palabra1);
             printf("\n->Ingrese segunda palabra a buscar -> ");
+            fflush(stdin);
             scanf("%s", &palabra2);
             printf("\n->Ingrese ID archivo en el que buscar -> ");
             scanf("%i", &idDOC);
@@ -79,8 +79,8 @@ int main()
             // Buscar una frase completa (las palabras deben estar contiguas en alguno de los documentos)
             system("cls");
             printf("->Escriba la frase que desea buscar en el diccionario ?\n");
-            fflush(stdin);
             printf("\n->Ingrese la Frase:  ");
+            fflush(stdin);
             gets(palabra3);
             buscarFrase(motor, palabra3);
             system("pause");
@@ -101,8 +101,8 @@ int main()
             system("cls");
             // Utilizar la distancia de levenshtein en el ingreso de una palabra y sugerir similares a partir de una distancia <= 3
             printf("->Que palabra desea buscar ?\n");
-            fflush(stdin);
             printf("\n*Ingrese palabra -> ");
+            fflush(stdin);
             scanf("%s", &palabra);
             distanciaLevenshtein(motor, palabra);
             system("pause");
